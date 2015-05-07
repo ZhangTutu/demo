@@ -33,33 +33,17 @@ body{overflow: hidden;}
 </head>
 <body>
 	<div class="header">
-		<img src="./img/top_2.jpg" alt="">
-		<a href="home.html" class="slide_link"></a>
+		<img src="./img/top_4.jpg" alt="">
+		<a href="c_3.html" class="slide_link"></a>
 	</div>
 
 	<div class="main hammer wraper">
-		<div class="landr"><img src="./img/landr.png" alt=""></div>
 		<div class="animated m_imgs m_show">
-			<a href="c_1_1a.html"><img src="./img/e_1.jpg" alt=""></a>
-			<a href="c_1_1b.html"><img class="bp" src="./img/bp1.jpg" alt=""></a>
-			<a href="c_1_1z.html"><div class="m_imgs_btm"></div></a>
-		</div>
-		<div class="animated m_imgs">
-			<a href="c_1_2a.html"><img src="./img/e_2.jpg" alt=""></a>
-			<a href="c_1_2b.html"><img class="bp" src="./img/bp1.jpg" alt=""></a>
-			<a href="c_1_2z.html"><div class="m_imgs_btm"></div></a>
-		</div>
-		<div class="animated m_imgs">
-			<a href="c_1_3a.html"><img src="./img/e_3.jpg" alt=""></a>
-			<a href="c_1_3b.html"><img class="bp" src="./img/bp2.jpg" alt=""></a>
-			<a href="c_1_3z.html"><div class="m_imgs_btm"></div></a>
+			<img src="./img/yqa_z.jpg" alt="">
 		</div>
 	</div>
 
-	<div class="bottom_icon">
-		<a href="javascript:void(0);"><img src="./img/add.png" alt=""></a>
-		<a style="float: right;" href="javascript:void(0);"><img src="./img/like.png" alt=""></a>
-	</div>
+
 
 
 </body>
@@ -68,33 +52,7 @@ body{overflow: hidden;}
 <script type="text/javascript" src="./js/jquery.hammer.js"></script>
 <script type="text/javascript">
 $(function(){
-	var nrote = 0;
-	var hammertime = $('.hammer').hammer();
-	hammertime.on('swipeleft', function(ev){
-		// $('.hammer').addClass('flipOutY');
-		nrote++;
-		if(nrote==3){
-			nrote = 0;
-		}
-
-		$('.m_show').addClass('bounceOutLeft',function(){
-			$(this).removeClass('m_show');
-		});
-		$('.m_imgs').eq(nrote).removeClass('bounceOutLeft bounceOutRight bounceInLeft').addClass('m_show bounceInRight');
-
-	});
-	hammertime.on('swiperight', function(ev){
-		nrote--;
-		if(nrote==-1){
-			nrote = 2;
-		}
-
-		$('.m_show').addClass('bounceOutRight',function(){
-			$(this).removeClass('m_show');
-		});
-		$('.m_imgs').eq(nrote).removeClass('bounceOutRight bounceOutLeft bounceInRight').addClass('m_show bounceInLeft');
-
-	});
+	
 
 	var s = $('.m_imgs img').height();
 	$('.main').height(s);
