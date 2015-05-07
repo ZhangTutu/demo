@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content ="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="blank" />
+<meta name="format-detection" content="telephone=no" />
+<title>Demo</title>
+<link rel="stylesheet" href="./css/style.css">
+<link rel="stylesheet" href="./css/animate.min.css">
+<style type="text/css">
+body{overflow: hidden;}
+.header{position: relative;background: #776e67;}
+.slide_link{display: inline-block;background: #000;width: 35px;height: 40px;position: absolute;left: 0;top: 0;opacity: 0;}
+.header img{width: 100%;}
+.rote_head{text-align: center;margin: 30px 0;}
+.nrote{background: none;border: 1px solid #555;display: inline-block;width: 6px;height: 6px;border-radius: 100%;margin: 0 2px;}
+.focus{background: #555;}
+.main{position: relative;}
+.m_imgs{text-align: center;position: absolute;display: none;}
+.m_show{display: block;}
+.m_imgs img{width: 75%;box-shadow: 5px 5px 6px 1px #666;}
+
+.slideBar{position: fixed;left: -55%;z-index: 10;width: 55%;}
+.slideBar img{width: 100%;}
+</style>
+</head>
+<body>
+	<div class="header">
+		<img src="./img/top.jpg" alt="">
+		<a href="javascript:void(0);" class="slide_link"></a>
+
+	</div>
+	<div class="slideBar">
+		<img src="./img/side.png" alt="">
+	</div>
+
+
+	<div class="rote_head">
+		<span class="nrote focus"></span>
+		<span class="nrote"></span>
+		<span class="nrote"></span>
+		<span class="nrote"></span>
+		<span class="nrote"></span>
+	</div>
+
+	<div class="main hammer wraper">
+		<div class="animated m_imgs m_show"><a href="c_1.html"><img src="./img/h_1.jpg" alt=""></a></div>
+		<div class="animated m_imgs"><a href="c_2.html"><img src="./img/h_2.jpg" alt=""></a></div>
+		<div class="animated m_imgs"><a href="c_3.html"><img src="./img/h_4.jpg" alt=""></a></div>
+		<div class="animated m_imgs"><a href="c_4.html"><img src="./img/h_3.jpg" alt=""></a></div>
+		<div class="animated m_imgs"><a href="c_5.html"><img src="./img/h_5.jpg" alt=""></a></div>
+	</div>
+
+
+</body>
+<script type="text/javascript" src="./js/jquery.js"></script>
+<script type="text/javascript" src="./js/hammer.js"></script>
+<script type="text/javascript" src="./js/jquery.hammer.js"></script>
+<script type="text/javascript">
+$(function(){
+	var nrote = 0;
+	var hammertime = $('.hammer').hammer();
+	hammertime.on('swipeleft', function(ev){
+		// $('.hammer').addClass('flipOutY');
+		nrote++;
+		if(nrote==5){
+			nrote = 0;
+		}
+
+		$('.m_show').addClass('bounceOutLeft',function(){
+			$(this).removeClass('m_show');
+		});
+		$('.m_imgs').eq(nrote).removeClass('bounceOutLeft bounceOutRight bounceInLeft').addClass('m_show bounceInRight');
+
+		$('.nrote').removeClass('focus');
+		$('.nrote').eq(nrote).addClass('focus');
+	});
+	hammertime.on('swiperight', function(ev){
+		nrote--;
+		if(nrote==-1){
+			nrote = 4;
+		}
+
+		$('.m_show').addClass('bounceOutRight',function(){
+			$(this).removeClass('m_show');
+		});
+		$('.m_imgs').eq(nrote).removeClass('bounceOutRight bounceOutLeft bounceInRight').addClass('m_show bounceInLeft');
+
+		$('.nrote').removeClass('focus');
+		$('.nrote').eq(nrote).addClass('focus');
+	});
+
+	$('.slide_link').click(function(){
+		if($('.slideBar').hasClass('slided')){
+			$('.slideBar').removeClass('slided').animate({'left':'-55%'},200);
+			return false;
+		}else{
+			$('.slideBar').animate({'left':0},200,function(){
+				$(this).delay(300).addClass('slided');
+				$('body').click(function(){
+					if($('.slideBar').hasClass('slided')){
+						$('.slideBar').removeClass('slided').animate({'left':'-55%'},200);
+					}
+				});
+				return false;
+			});
+		}
+	})
+})
+</script>
+</html>

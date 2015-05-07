@@ -1,0 +1,16 @@
+*{margin:0;padding:0;}
+body{font-size:13px;color:#4b4b4b;font-family: Verdana,'Microsoft YaHei',Tahoma,'Simsun',sans-serif;cursor: default;background: #F4F3F3;}
+ul,ol{list-style:none;}
+a{color: inherit;text-decoration:none;}
+img{border: none;}
+input{font-family: inherit;}
+.wraper{width: 600px;margin: auto;}
+@media screen and (max-width: 3000px) and (min-width: 1200px){
+	.wraper{width: 600px;}
+}
+@media screen and (max-width: 1200px) and (min-width: 600px){
+	.wraper{width: 600px;}
+}
+@media screen and (max-width: 600px){
+	.wraper{width: 100%;}
+}
