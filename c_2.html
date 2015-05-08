@@ -13,7 +13,7 @@
 <style type="text/css">
 body{overflow: hidden;}
 .header{position: relative;background: #776e67;}
-.slide_link{display: inline-block;background: #000;width: 50px;height: 40px;position: absolute;left: 0;top: 0;opacity: 0;}
+.slide_link{display: inline-block;background: #000;width: 40px;height: 40px;position: absolute;left: 0;top: 0;opacity: 0;}
 .header img{width: 100%;}
 
 .main{position: relative;margin: 40px auto;}
@@ -36,6 +36,9 @@ body{overflow: hidden;}
 	<div class="header">
 		<img src="./img/top_2.jpg" alt="">
 		<a href="home.html" class="slide_link"></a>
+		<a href="search.html" class="search"></a>
+		<a href="javascript:void(0);" class="sx"></a>
+		<a href="message.html" class="messagebox"></a>
 	</div>
 
 	<div class="main hammer wraper">
@@ -58,13 +61,15 @@ body{overflow: hidden;}
 	</div>
 
 	<div class="bottom_icon">
-		<a href="javascript:void(0);"><img src="./img/add.png" alt=""></a>
-		<a style="float: right;" href="javascript:void(0);"><img src="./img/like.png" alt=""></a>
+		<a style="float: right;" class="addBtn" href="javascript:void(0);"><img src="./img/add.png" alt=""></a>
+		<a href="javascript:void(0);"><img src="./img/like.png" alt=""></a>
 	</div>
 
 
 </body>
 <script type="text/javascript" src="./js/jquery.js"></script>
+<script type="text/javascript" src="./js/extend.js"></script>
+<script type="text/javascript" src="./js/send.js"></script>
 <script type="text/javascript" src="./js/hammer.js"></script>
 <script type="text/javascript" src="./js/jquery.hammer.js"></script>
 <script type="text/javascript">

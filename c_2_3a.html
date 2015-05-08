@@ -45,18 +45,20 @@ body{overflow: hidden;}
 	</div>
 
 	<div class="bottom_icon">
-		<a href="javascript:void(0);"><img src="./img/add.png" alt=""></a>
-		<a style="float: right;" href="javascript:void(0);"><img src="./img/like.png" alt=""></a>
+		<a style="float: right;" class="addBtn" href="javascript:void(0);"><img src="./img/add.png" alt=""></a>
+		<a href="javascript:void(0);"><img src="./img/like.png" alt=""></a>
 	</div>
 
 
 </body>
 <script type="text/javascript" src="./js/jquery.js"></script>
+<script type="text/javascript" src="./js/extend.js"></script>
+<script type="text/javascript" src="./js/send.js"></script>
 <script type="text/javascript" src="./js/hammer.js"></script>
 <script type="text/javascript" src="./js/jquery.hammer.js"></script>
 <script type="text/javascript">
 $(function(){
-	
+
 
 	var s = $('.m_imgs img').height();
 	$('.main').height(s);

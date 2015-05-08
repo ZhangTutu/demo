@@ -13,13 +13,13 @@
 <style type="text/css">
 body{overflow: hidden;}
 .header{position: relative;background: #776e67;}
-.slide_link{display: inline-block;background: #000;width: 40px;height: 40px;position: absolute;left: 0;top: 0;opacity: 0;}
+.slide_link{display: inline-block;background: #000;width: 50px;height: 40px;position: absolute;left: 0;top: 0;opacity: 0;}
 .header img{width: 100%;}
 
 .main{position: relative;margin: 40px auto;}
 .m_imgs{text-align: center;position: absolute;display: none;width: 100%;}
 .m_show{display: block;}
-.m_imgs img{width: 75%;box-shadow: 5px 5px 6px 1px #666;}
+.m_imgs img{width: 100%;box-shadow: 5px 5px 6px 1px #666;}
 .bp{width: 20px !important;position: absolute;right: 18%; top: -20px;box-shadow: none !important;}
 .landr{position: absolute;width: 94%;left: 3%;top: 45%;}
 .landr img{width: 100%;}
@@ -29,29 +29,28 @@ body{overflow: hidden;}
 
 .bottom_icon{width: 62%;margin: 0 auto;}
 .bottom_icon img{width: 30px;height: 30px;}
+.inner_sw{width: 50%;margin: 35px auto 0;position: relative;}
+.inner_sw img{width: 100%;}
+.inner_l{display: inline-block;position: absolute;width: 50%;height: 28px;left:0;top:0;}
+.inner_r{display: inline-block;position: absolute;width: 50%;height: 28px;right:0;top:0;}
 </style>
 </head>
 <body>
 	<div class="header">
-		<img src="./img/top_2.jpg" alt="">
-		<a href="home.html" class="slide_link"></a>
-		<a href="search.html" class="search"></a>
-		<a href="javascript:void(0);" class="sx"></a>
-		<a href="message.html" class="messagebox"></a>
+		<img src="./img/zmessage_1.jpg" alt="">
+		<a href="javascript:history.go(-1)" class="slide_link"></a>
 	</div>
+
+    <div class="inner_sw">
+        <img src="./img/zmessage_2.jpg" alt="">
+        <a class="inner_l" href="message.html"></a>
+        <a class="inner_r" href="message1.html"></a>
+    </div>
 
 	<div class="main hammer wraper">
-		<div class="landr"><img src="./img/landr.png" alt=""></div>
 		<div class="animated m_imgs m_show">
-			<img src="./img/fhqa.jpg" alt="">
-			<img class="bp" src="./img/fhq.jpg" alt="">
-			<a href="c_4_1z.html"><div class="m_imgs_btm"></div></a>
+			<a href="javascript:void(0);"><img src="./img/zmessage_4.jpg" alt=""></a>
 		</div>
-	</div>
-
-	<div class="bottom_icon">
-		<a style="float: right;" class="addBtn" href="javascript:void(0);"><img src="./img/add.png" alt=""></a>
-		<a href="javascript:void(0);"><img src="./img/like.png" alt=""></a>
 	</div>
 
 
@@ -63,37 +62,6 @@ body{overflow: hidden;}
 <script type="text/javascript" src="./js/jquery.hammer.js"></script>
 <script type="text/javascript">
 $(function(){
-	var nrote = 0;
-	var hammertime = $('.hammer').hammer();
-	hammertime.on('swipeleft', function(ev){
-		// $('.hammer').addClass('flipOutY');
-		nrote++;
-		if(nrote==1){
-			nrote = 0;
-		}
-
-		$('.m_show').addClass('bounceOutLeft',function(){
-			$(this).removeClass('m_show');
-		});
-		$('.m_imgs').eq(nrote).removeClass('bounceOutLeft bounceOutRight bounceInLeft').addClass('m_show bounceInRight');
-
-	});
-	hammertime.on('swiperight', function(ev){
-		nrote--;
-		if(nrote==-1){
-			nrote = 0;
-		}
-
-		$('.m_show').addClass('bounceOutRight',function(){
-			$(this).removeClass('m_show');
-		});
-		$('.m_imgs').eq(nrote).removeClass('bounceOutRight bounceOutLeft bounceInRight').addClass('m_show bounceInLeft');
-
-	});
-
-	var s = $('.m_imgs img').height();
-	$('.main').height(s);
-
-})
+});
 </script>
 </html>

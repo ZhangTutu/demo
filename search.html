@@ -12,8 +12,8 @@
 <link rel="stylesheet" href="./css/animate.min.css">
 <style type="text/css">
 body{overflow: hidden;}
-.header{position: relative;background: #776e67;}
-.slide_link{display: inline-block;background: #000;width: 50px;height: 40px;position: absolute;left: 0;top: 0;opacity: 0;}
+.header{position: relative;}
+.slide_link{display: inline-block;width: 40px;height: 40px;position: absolute;left: 0;top: 0;}
 .header img{width: 100%;}
 
 .main{position: relative;margin: 40px auto;}
@@ -33,22 +33,9 @@ body{overflow: hidden;}
 </head>
 <body>
 	<div class="header">
-		<img src="./img/top_3.jpg" alt="">
-		<a href="c_1.html" class="slide_link"></a>
+		<img src="./img/search.jpg" alt="">
+		<a href="javascript:history.go(-1);" class="slide_link"></a>
 	</div>
-
-	<div class="main hammer wraper">
-		<div class="animated m_imgs m_show">
-			<img src="./img/m_1.jpg" alt="">
-			<a href="c_1_1b.html"><img class="bp" src="./img/bp1.jpg" alt=""></a>
-		</div>
-	</div>
-
-	<div class="bottom_icon">
-		<a style="float: right;" class="addBtn" href="javascript:void(0);"><img src="./img/add.png" alt=""></a>
-		<a href="javascript:void(0);"><img src="./img/like.png" alt=""></a>
-	</div>
-
 
 </body>
 <script type="text/javascript" src="./js/jquery.js"></script>
@@ -56,13 +43,4 @@ body{overflow: hidden;}
 <script type="text/javascript" src="./js/send.js"></script>
 <script type="text/javascript" src="./js/hammer.js"></script>
 <script type="text/javascript" src="./js/jquery.hammer.js"></script>
-<script type="text/javascript">
-$(function(){
-
-	var s = $('.m_imgs img').height();
-	$('.main').height(s);
-
-
-})
-</script>
 </html>
