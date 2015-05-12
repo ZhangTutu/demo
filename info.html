@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content ="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="blank" />
+<meta name="format-detection" content="telephone=no" />
+<title>Demo</title>
+<link rel="stylesheet" href="./css/style.css">
+<link rel="stylesheet" href="./css/animate.min.css">
+<style type="text/css">
+body{background: #000;overflow: hidden;}
+.header{position: fixed;width: 100%;top:0;z-index:10;}
+.hwrp{position: absolute;width: 100%;text-align: center;color:#FFF;top:0;font-size: 16px;line-height: 46px;}
+.slide_link{display: inline-block;background: #000;width: 35px;height: 40px;position: absolute;left: 0;top: 0;opacity: 0;}
+
+.header img{width: 100%;}
+.m_pic{position: absolute;width: 100%;overflow: auto;left:100%;top:0;bottom:0;}
+.m_pic img{width: 100%;position: absolute;top:0;bottom:0;margin: auto;}
+.m_show{left:0;}
+
+</style>
+</head>
+<body>
+	<div class="header">
+		<img src="./img/top_1.png" alt="">
+        <div class="hwrp"><span class="pgd">1</span> / <span class="pga">1</span></div>
+		<a href="index.html" class="slide_link"></a>
+		<a href="javascript:void(0);" class="share"></a>
+	</div>
+
+	<div class="main hammer wraper">
+		<div class="animated m_pic m_show">
+			<img class="m_pic_cd" src="./img/img_1.jpg" alt="">
+		</div>
+		<div class="animated m_pic">
+			<img class="m_pic_cd" src="./img/img_2.jpg" alt="">
+		</div>
+        <div class="animated m_pic">
+			<img class="m_pic_cd" src="./img/img_3.jpg" alt="">
+		</div>
+        <div class="animated m_pic">
+			<img class="m_pic_cd" src="./img/img_4.jpg" alt="">
+		</div>
+        <div class="animated m_pic">
+			<img class="m_pic_cd" src="./img/img_5.jpg" alt="">
+		</div>
+        <div class="animated m_pic">
+			<img class="m_pic_cd" src="./img/img_6.jpg" alt="">
+		</div>
+        <div class="animated m_pic">
+			<img class="m_pic_cd" src="./img/img_7.jpg" alt="">
+		</div>
+        <div class="animated m_pic">
+			<img class="m_pic_cd" src="./img/img_8.jpg" alt="">
+		</div>
+        <div class="animated m_pic">
+			<img class="m_pic_cd" style="margin:0;" src="./img/img_9.jpg" alt="">
+		</div>
+	</div>
+
+    <div class="shares">
+        <img src="./img/sharebox.jpg" alt="">
+        <a href="javascript:void(0);" class="kt_t"></a>
+        <a href="javascript:void(0);" class="kt_b"></a>
+    </div>
+
+    <div class="friends">
+        <img src="./img/friends.jpg" alt="">
+        <a href="javascript:void(0);" class="close_frd slide_link_cp"></a>
+		<a href="javascript:void(0);" class="close_frd share_cp"></a>
+    </div>
+
+</body>
+<script type="text/javascript" src="./js/jquery.js"></script>
+<script type="text/javascript" src="./js/extend.js"></script>
+<script type="text/javascript" src="./js/send.js"></script>
+<script type="text/javascript" src="./js/hammer.js"></script>
+<script type="text/javascript" src="./js/jquery.hammer.js"></script>
+<script type="text/javascript">
+$(function(){
+    var H = $(window).height();
+    $('.m_pic_cd').each(function(){
+        var h = $(this).height();
+        if(h>H){
+            $(this).css({'top':'0','bottom':'none','margin':'0'});
+        }
+    });
+
+	var nrote = 0;
+    var count = $('.m_pic').length;
+
+    $('.pga').text(count);
+
+    $('.m_pic').on('click',function(){
+        $('.header').slideToggle(150);
+    });
+
+	var hammertime = $('.hammer').hammer();
+	hammertime.on('swipeleft', function(ev){
+        $('.header').fadeOut();
+		nrote++;
+		if(nrote==count){
+			nrote = 0;
+		}
+        $('.pgd').text(nrote+1);
+        $('.m_show').animate({'left':'-100%'},250,function(){
+			$(this).removeClass('m_show');
+		});
+        $('.m_pic').not('.m_show').css('left','100%');
+		$('.m_pic').eq(nrote).animate({'left':'0'},250).addClass('m_show');
+	});
+	hammertime.on('swiperight', function(ev){
+        $('.header').fadeOut();
+		nrote--;
+		if(nrote==-1){
+			nrote = count-1;
+		}
+        $('.pgd').text(nrote+1);
+        $('.m_show').animate({'left':'100%'},250,function(){
+			$(this).removeClass('m_show');
+		});
+        $('.m_pic').not('.m_show').css('left','-100%');
+		$('.m_pic').eq(nrote).animate({'left':'0'},250).addClass('m_show');
+	});
+
+});
+</script>
+</html>

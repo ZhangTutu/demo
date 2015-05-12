@@ -25,12 +25,9 @@ $('.bottom_icon a').click(function(){
     if($(this).hasClass('addBtn')){
 
     }else{
-        var like = $(this).children('img');
-        if(like.hasClass('pnk')){
-            like.removeClass('pnk').attr('src','./img/like.png');
-        }else{
-            like.addClass('pnk').attr('src','./img/likep.png');
-        }
+        $('.shares').show().animate({'bottom':'0'},160);
+        $('.shares').mask();
+        $('#fun_mask').click(hide_share);
     }
 });
 
@@ -50,4 +47,28 @@ $('.sx').click(function(){
         return false;
     });
     return false;
+});
+
+function hide_share(){
+    $('.shares').animate({'bottom':'-140px'},200,function(){
+        $(this).hide();
+        $('#fun_mask').remove();
+    });
+};
+$('.share').click(function(){
+    $('.shares').show().animate({'bottom':'0'},160);
+    $('.shares').mask();
+    $('#fun_mask').click(hide_share);
+});
+$('.kt_b').click(hide_share);
+$('.kt_t').click(function(){
+    hide_share();
+    $('.friends').fadeIn(220,function(){
+        $(this).animate({'left':0},180);
+    });
+});
+$('.close_frd').click(function(){
+    $('.friends').animate({'left':'100%'},250,function(){
+        $(this).hide();
+    });
 });
