@@ -24,6 +24,7 @@ input{font-family: inherit;}
 .addDVS{display: inline-block;position: absolute;width: 40px;height: 28px;right:5px;top:5px;}
 .sx{display: inline-block;width: 36px;height: 40px;position: absolute;right: 0;top: 0;}
 .share{display: inline-block;width: 36px;height: 40px;position: absolute;right: 0;top: 0;}
+.share_p{display: inline-block;width: 36px;height: 40px;position: absolute;right: 0;top: 0;}
 .share_cp{display: inline-block;width: 36px;height: 40px;position: absolute;right: 0;top: 0;}
 .messagebox{display: inline-block;width: 36px;height: 40px;position: absolute;right: 36px;top: 0;}
 .search{display: inline-block;width: 36px;height: 40px;position: absolute;left: 40px;top: 0;}
